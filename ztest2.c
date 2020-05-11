@@ -14,11 +14,12 @@ int solution (char *S, int C[], int N)
 	{
 		if(S[i] == S[i+1])
 		{
+			maxCost=-1;
 			while(S[i] == S[i+1])
 			{
 				tab[i]=1;
 				tab[i+1]=1;
-				maxCost=-1;
+
 				if(C[i] > maxCost)
 				{
 					maxCost = C[i];
@@ -48,8 +49,8 @@ return minimum;
 
 int main(void)
 {
-	char s[]={'a','a','a','b','b'};
-	int c[]={10,20,10,20,10};
+	char s[]={'a','a','a','a','b','b'};
+	int c[]={20,10,10,10,20,10};
 	int n = sizeof(c) / sizeof(c[0]);
 	printf("	%d",solution(s,c,n));
 return 0;
